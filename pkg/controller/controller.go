@@ -413,7 +413,7 @@ func getReplicas(function *faasv1.Function, deployment *appsv1.Deployment) *int3
 		lb := *function.Spec.Labels
 		if value, exists := lb[LabelMinReplicas]; exists {
 			r, err := strconv.Atoi(value)
-			if err == nil && r > 0 {
+			if err == nil && r >= 0 {
 				minReplicas = int32p(int32(r))
 			}
 		}
