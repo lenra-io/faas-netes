@@ -47,7 +47,7 @@ func (f *FunctionFactory) MakeProbes(r types.FunctionDeployment) (*FunctionProbe
 		TimeoutSeconds:      int32(f.Config.ReadinessProbe.TimeoutSeconds),
 		PeriodSeconds:       int32(f.Config.ReadinessProbe.PeriodSeconds),
 		SuccessThreshold:    1,
-		FailureThreshold:    3,
+		FailureThreshold:    10,
 	}
 
 	probes.Liveness = &corev1.Probe{
