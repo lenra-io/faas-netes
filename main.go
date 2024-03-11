@@ -106,14 +106,14 @@ func main() {
 		HTTPProbe:       config.HTTPProbe,
 		SetNonRootUser:  config.SetNonRootUser,
 		ReadinessProbe: &k8s.ProbeConfig{
-			InitialDelaySeconds: int32(5),
-			TimeoutSeconds:      int32(1),
-			PeriodSeconds:       int32(5),
-		},
-		LivenessProbe: &k8s.ProbeConfig{
 			InitialDelaySeconds: int32(2),
 			TimeoutSeconds:      int32(1),
 			PeriodSeconds:       int32(2),
+		},
+		LivenessProbe: &k8s.ProbeConfig{
+			InitialDelaySeconds: int32(5),
+			TimeoutSeconds:      int32(1),
+			PeriodSeconds:       int32(5),
 		},
 		ProfilesNamespace: config.ProfilesNamespace,
 	}
